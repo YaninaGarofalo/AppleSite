@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+	<meta charset="UTF-8">
+	<title>Apple Site</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<style>
+		/*google fonts*/
+		@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+		@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
+		/*-------------------global-------------------*/
+		*{
+			font-family: 'Roboto';
+			box-sizing: border-box;
+		}
+		body{
+			margin: 0;
+			background-color: rgb(0,0,0);
+		}
+
+		/*-------------------header-------------------*/
+		nav{
+			position: relative;
+			width: 100%;
+    		min-width: 1024px;
+    		background: rgba(45,45,45,0.98);    		
+		}
+		#principal div{
+			height: 44px;    		
+    		font-size: 17px;
+    		text-align: center;
+    		line-height: 44px;
+    		font-weight: 300;
+			display: flex;
+   			max-width: 980px;
+    		padding: 0 22px;
+    		margin: auto;
+    		justify-content: space-between;
+    	}
+		#principal a{
+			color: white;
+			text-decoration: none;
+		}
+		#principal a:hover{
+			color: #eee;
+		}
+		.fa-apple{
+			font-size: 20px;
+		}
+		#stickyNav{
+			background-color: rgba(0,0,0,0.85);
+			position: sticky;
+			position: -webkit-sticky;
+			top:0;
+			z-index: 9999;
+		}
+		#stickyNav div{
+			height: 44px;    		
+    		font-size: 17px;
+    		line-height: 44px;
+    		font-weight: 300;
+    		max-width: 980px;
+    		padding: 0 11px;
+    		margin:auto;
+		}
+		#logo{
+			width: 98px;
+   			height: 24px;
+		}
+		#logo img{			
+   			padding-top: 10px;
+		}
+
+		/*-------------------main-------------------*/
+		#blueblock{
+			background-color:#0070C9;
+			width: 100%;
+    		min-width: 1024px;
+			
+		}
+		#blueblock div{
+			height: 44px;    		
+    		font-size: 17px;
+    		line-height: 44px;
+    		font-weight: 300;
+    		max-width: 980px;
+    		padding: 0 11px;
+    		margin: auto;
+    		text-align: center;
+    		color: white;
+		}
+		#iphone-01{
+			position: relative;
+    		margin: 0px auto 0px auto;
+    		width: 1114px;
+    		height: 320px;
+    		left: -67px;
+		}
+		#iphone-01 #completa{
+			background-image: url(media-01/completa.png);
+			background-size: 100%;
+			width: 100%;
+			margin: auto;
+			height: 210px;
+			position: absolute;
+			z-index: 2;
+			top: 19px;
+		}
+		#iphone-01 #copia{
+    		height: 260px;
+    		width: 100%;
+    		background-image: url(media-01/bottom.jpg);
+    		position: absolute;
+    		z-index: 1;
+    		top: 65px;
+			overflow: hidden;
+		}
+		.container{
+			position: relative;
+    		text-align: center;
+    		margin: 0 auto 0 auto;
+    		margin-top: 248px;
+    		width: 820px;
+    		font-size: 1.5em;
+    		color: white;
+    		text-align: center;
+    		margin: auto;
+    		padding: 20px;
+    		padding-top: 100px;
+		}
+		.container img{
+			
+			width: 200px;
+		}
+		.container h2{
+			font-size: 4em;
+		}
+		#seccion2{
+			background-image: url(img/seccion2.jpg);
+			width: 100%;
+			height: 600px;
+			background-size: cover;
+			opacity: 1;
+			transition: all 1s linear;
+		}
+		#seccion2:hover{
+			opacity: 0.60;
+		}
+		.clippy{
+			-webkit-background-clip: text;
+    		color: transparent !important;
+		}
+		.texture{
+			background-image: url(img/textura.jpg);
+			background-repeat: no-repeat;
+		}
+		.bigger{
+			font-size: 3.4em;
+			font-weight: 700;
+		}
+		.bigger span{
+			color: white;
+		}
+		#figuras{
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+		}
+		#figura-izq{
+    		opacity: 1;
+    		animation: figura-izq 5s infinite;
+			animation-delay: 1s;
+		}
+		#figura-centro{
+			position: relative;
+    	}
+    	#figura-der{
+    		opacity: 1;
+    		animation: figura-der 5s infinite;
+			animation-delay: 1s;
+    	}
+		#figura01, #figura02, #figura03{
+			background-image: url(media-02/01.png);
+			background-repeat: no-repeat;
+			width: 107px;
+    		height: 1440px;
+    		background-size: 100%;
+		}
+		#figura02{
+			background-image: url(media-02/02.png);
+		}
+		#figura03{
+			background-image: url(media-02/03.png);
+		}
+		.sticky{
+			position: sticky;
+			position: -webkit-sticky;
+			top:10px;
+			background-color: rgb(0,0,0);
+		}
+
+		@keyframes figura-izq{
+			from{
+				transform: translate(0px, 0px) scale(1,1);
+    			opacity: 1;
+			}
+			to{
+				transform: translate(-300px, 0px) scale(0.98,0.98);
+    			opacity: 0;
+			}
+		}
+		@keyframes figura-der{
+			from{
+				transform: translate(0px, 0px) scale(1,1);
+    			opacity: 1;
+			}
+			to{
+				transform: translate(300px, 0px) scale(0.98,0.98);
+    			opacity: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+		<nav id="principal">
+			<div>
+				<a href=""><i class="fab fa-apple"></i></a>
+				<a href="">Mac</a>
+				<a href="">iPad</a>
+				<a href="">iPhone</a>
+				<a href=""><i class="fas fa-search"></i></a>
+			</div>
+		</nav>
+		<nav id="stickyNav">
+			<div>
+				<div id="logo">
+					<img src="img/logo.svg" alt="">
+				</div>
+			</div>
+		</nav>
+		
+	<main>
+	<div class="sticky">
+		<div id="blueblock">
+			<div>
+				Get iPhone XS from $29.99/mo. or $699 when you trade in your iPhone online or in store.*
+			</div>
+		</div>
+		<div id="iphone-01">
+			<div id="completa"></div>
+			<div id="copia">
+			</div>
+		</div>
+	</div>
+	<div class="sticky">
+		<div class="container">
+			<img src="img/logo.svg" alt="">
+			<h2>Welcome to the big screens.</h2>
+			<p>Super Retina in two sizes — including the largest display ever on an iPhone. Even faster Face ID. The smartest, most powerful chip in a smartphone. And a breakthrough dual-camera system with Depth Control. iPhone XS is everything you love about iPhone. Taken to the extreme.</p>
+		</div>
+	</div>
+	<div class="sticky">
+		<div id="seccion2"></div>
+	</div>
+	<div class="sticky">
+		<div class="container clippy texture bigger">
+			<p>
+				<span>Super Retina. In big and bigger.</span> The custom OLED displays on iPhone XS deliver the most accurate color in the industry, HDR, and true blacks. And iPhone XS Max has our largest display ever on an iPhone.
+			</p>
+		</div>
+	</div>
+	<div class="sticky">
+		<div class="container">
+			<div id="figuras">
+				<div id="figura-izq">
+					<div id="figura01"></div>
+				</div>
+				<div id="figura-centro">
+					<div id="figura02"></div>
+				</div>
+				<div id="figura-der">
+					<div id="figura03"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+	
+	<script>
+		$(window).on('scroll', function () {
+			if($(window).scrollTop()){
+				var dato = $(window).scrollTop();
+				console.log(dato)
+				if (dato >= 2400 ) {
+					$('#figura-izq, #figura-der').css({"animation-play-state":"running", "animation-iteration-count":"1", "opacity":"0"})
+				}else if(dato>= 3000 || dato < 2400){
+					$('#figura-izq, #figura-der').css("animation-play-state","paused")
+				}
+				
+			}
+		})
+	</script>
+</body>
+</html>
